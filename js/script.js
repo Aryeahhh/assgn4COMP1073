@@ -4,6 +4,9 @@ const image = document.getElementById("image");
 const imagebutton = document.getElementById("imagebutton");
 const studentIDbutton = document.getElementById("studentIDbutton")
 const studentIDpara = document.getElementById("studentID")
+const imageTitle = document.getElementById("imageTitle");
+const imageExplanation = document.getElementById("imageExplanation");
+const imageLink = document.getElementById("imageLink");
 //Showing student ID
 studentIDbutton.addEventListener("click", function(){
     studentIDpara.innerHTML = "1217030";
@@ -17,6 +20,9 @@ function fetchResults(){
     .then(data => {
         console.log(data);
         image.src = data.url;
+        imageTitle.innerHTML = data.title;
+        imageExplanation.innerHTML = data.explanation;
+        imageLink.href = data.hdurl;
     })
     //Catching any errors
     .catch(error => console.log(error));
