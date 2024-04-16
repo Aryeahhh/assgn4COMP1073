@@ -2,6 +2,12 @@
 const date= document.getElementById("date");
 const image = document.getElementById("image");
 const imagebutton = document.getElementById("imagebutton");
+const studentIDbutton = document.getElementById("studentIDbutton")
+const studentIDpara = document.getElementById("studentID")
+//Showing student ID
+studentIDbutton.addEventListener("click", function(){
+    studentIDpara.innerHTML = "1217030";
+});
 //Fetching the data from the API
 function fetchResults(){
     let url = "https://api.nasa.gov/planetary/apod?api_key=7ORBPYnF9fPSy1RcQnbkaZMLCeBgidhbKADhjflX&date=" + date.value;
